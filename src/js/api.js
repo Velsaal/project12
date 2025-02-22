@@ -39,3 +39,20 @@ export async function getContactsService() {
         console.log(error.message);
     }
 }
+export async function deleteContactService(id){
+    try{
+        const {data} = await axios.delete(`/contacts/${id}`);
+        return data;
+} catch(error){
+    console.log(error.message);
+}
+}
+
+export async function logOutService(){
+    try{
+        const {data} = await axios.post('/users/logout');
+        return data;
+    } catch(error){
+        console.log(error.message);
+    }
+}
