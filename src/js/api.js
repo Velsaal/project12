@@ -14,3 +14,20 @@ return data;
     }
     
 }
+export async function loginUserService(user) {
+    try {
+        const {data} = await axios.post('/users/login', user);
+        return data;
+    } catch(error){
+        console.log(error.message);
+    }
+}
+
+export async function addContactService(contact) {
+    try {
+        const {data} = await axios.post('/contacts', contact);
+        return data;
+    } catch(error){
+        console.log(error.message);
+    }
+}
