@@ -31,3 +31,11 @@ export async function addContactService(contact) {
         console.log(error.message);
     }
 }
+export async function getContactsService() {
+    try {
+        const {data} = await axios.get('/contacts');
+        return data;
+    } catch(error){
+        console.log(error.message);
+    }
+}
